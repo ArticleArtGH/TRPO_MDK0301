@@ -49,12 +49,16 @@ namespace TRPO_curse_DB
             dGV = this.dataGridViewCathedra;
             Fill_dGVs(connDB, queryDB, dGV);
 
+            queryDB = "select * from Wages";
+            dGV = dataGridViewWages;
+            Fill_dGVs(connDB, queryDB, dGV);
+
             queryDB = "select * from Hours";
             dGV = this.dataGridViewHours;
             Fill_dGVs(connDB, queryDB, dGV);
 
-            queryDB = "select * from Wages";
-            dGV = dataGridViewWages;
+            queryDB = "select * from Records";
+            dGV = this.dataGridViewRecords;
             Fill_dGVs(connDB, queryDB, dGV);
         }
 

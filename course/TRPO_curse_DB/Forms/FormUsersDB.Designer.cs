@@ -38,6 +38,8 @@
             this.dataGridViewFaculty = new System.Windows.Forms.DataGridView();
             this.tabControlUsersDB = new System.Windows.Forms.TabControl();
             this.buttonDisconnectDB = new System.Windows.Forms.Button();
+            this.tabPageRecords = new System.Windows.Forms.TabPage();
+            this.dataGridViewRecords = new System.Windows.Forms.DataGridView();
             this.tabPageWages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWages)).BeginInit();
             this.tabPageHours.SuspendLayout();
@@ -47,6 +49,8 @@
             this.tabPageFaculty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFaculty)).BeginInit();
             this.tabControlUsersDB.SuspendLayout();
+            this.tabPageRecords.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecords)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPageWages
@@ -129,8 +133,9 @@
             // 
             this.tabControlUsersDB.Controls.Add(this.tabPageFaculty);
             this.tabControlUsersDB.Controls.Add(this.tabPageCathedra);
-            this.tabControlUsersDB.Controls.Add(this.tabPageHours);
             this.tabControlUsersDB.Controls.Add(this.tabPageWages);
+            this.tabControlUsersDB.Controls.Add(this.tabPageHours);
+            this.tabControlUsersDB.Controls.Add(this.tabPageRecords);
             this.tabControlUsersDB.Location = new System.Drawing.Point(-3, 2);
             this.tabControlUsersDB.Name = "tabControlUsersDB";
             this.tabControlUsersDB.SelectedIndex = 0;
@@ -146,6 +151,25 @@
             this.buttonDisconnectDB.Text = "Рассоединени с БД";
             this.buttonDisconnectDB.UseVisualStyleBackColor = true;
             this.buttonDisconnectDB.Click += new System.EventHandler(this.buttonDisconnectDB_Click);
+            // 
+            // tabPageRecords
+            // 
+            this.tabPageRecords.Controls.Add(this.dataGridViewRecords);
+            this.tabPageRecords.Location = new System.Drawing.Point(4, 22);
+            this.tabPageRecords.Name = "tabPageRecords";
+            this.tabPageRecords.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageRecords.Size = new System.Drawing.Size(489, 250);
+            this.tabPageRecords.TabIndex = 6;
+            this.tabPageRecords.Text = "Records";
+            this.tabPageRecords.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewRecords
+            // 
+            this.dataGridViewRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRecords.Location = new System.Drawing.Point(-1, 0);
+            this.dataGridViewRecords.Name = "dataGridViewRecords";
+            this.dataGridViewRecords.Size = new System.Drawing.Size(491, 250);
+            this.dataGridViewRecords.TabIndex = 4;
             // 
             // FormUsersDB
             // 
@@ -166,6 +190,8 @@
             this.tabPageFaculty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFaculty)).EndInit();
             this.tabControlUsersDB.ResumeLayout(false);
+            this.tabPageRecords.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecords)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -182,7 +208,7 @@
         private System.Windows.Forms.DataGridView dataGridViewFaculty;
         private System.Windows.Forms.TabControl tabControlUsersDB;
         private System.Windows.Forms.Button buttonDisconnectDB;
-
-
+        private System.Windows.Forms.TabPage tabPageRecords;
+        private System.Windows.Forms.DataGridView dataGridViewRecords;
     }
 }
