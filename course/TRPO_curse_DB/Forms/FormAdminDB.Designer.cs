@@ -44,12 +44,17 @@
             this.tabPageRecords = new System.Windows.Forms.TabPage();
             this.dataGridViewRecords = new System.Windows.Forms.DataGridView();
             this.buttonDisconnectDB = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxMonth = new System.Windows.Forms.TextBox();
+            this.buttonHoursWorked = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxHoursWorked = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelMonth = new System.Windows.Forms.Label();
+            this.labelWorker = new System.Windows.Forms.Label();
+            this.textBoxWorker = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControlAdminDB.SuspendLayout();
             this.tabPageUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
@@ -225,21 +230,23 @@
             this.buttonDisconnectDB.UseVisualStyleBackColor = true;
             this.buttonDisconnectDB.Click += new System.EventHandler(this.buttonDisconnectDB_Click);
             // 
-            // textBox1
+            // textBoxMonth
             // 
-            this.textBox1.Location = new System.Drawing.Point(5, 308);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(33, 20);
-            this.textBox1.TabIndex = 5;
+            this.textBoxMonth.Location = new System.Drawing.Point(48, 312);
+            this.textBoxMonth.Name = "textBoxMonth";
+            this.textBoxMonth.Size = new System.Drawing.Size(33, 20);
+            this.textBoxMonth.TabIndex = 5;
+            this.textBoxMonth.Text = "3";
             // 
-            // button1
+            // buttonHoursWorked
             // 
-            this.button1.Location = new System.Drawing.Point(237, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 25);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "no name";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonHoursWorked.Location = new System.Drawing.Point(5, 385);
+            this.buttonHoursWorked.Name = "buttonHoursWorked";
+            this.buttonHoursWorked.Size = new System.Drawing.Size(147, 25);
+            this.buttonHoursWorked.TabIndex = 7;
+            this.buttonHoursWorked.Text = "Отработано";
+            this.buttonHoursWorked.UseVisualStyleBackColor = true;
+            this.buttonHoursWorked.Click += new System.EventHandler(this.buttonHoursWorked_Click);
             // 
             // button3
             // 
@@ -260,35 +267,83 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Введите номер месяца для \r\nотображения отработанных часов";
             // 
-            // textBox2
+            // textBoxHoursWorked
             // 
-            this.textBox2.ForeColor = System.Drawing.Color.Red;
-            this.textBox2.Location = new System.Drawing.Point(15, 341);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 20);
-            this.textBox2.TabIndex = 10;
+            this.textBoxHoursWorked.ForeColor = System.Drawing.Color.Red;
+            this.textBoxHoursWorked.Location = new System.Drawing.Point(12, 430);
+            this.textBoxHoursWorked.Name = "textBoxHoursWorked";
+            this.textBoxHoursWorked.Size = new System.Drawing.Size(140, 20);
+            this.textBoxHoursWorked.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(50, 324);
+            this.label2.Location = new System.Drawing.Point(47, 413);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "Отработано (часов)";
             // 
+            // labelMonth
+            // 
+            this.labelMonth.AutoSize = true;
+            this.labelMonth.Location = new System.Drawing.Point(2, 315);
+            this.labelMonth.Name = "labelMonth";
+            this.labelMonth.Size = new System.Drawing.Size(40, 13);
+            this.labelMonth.TabIndex = 12;
+            this.labelMonth.Text = "Месяц";
+            // 
+            // labelWorker
+            // 
+            this.labelWorker.AutoSize = true;
+            this.labelWorker.Location = new System.Drawing.Point(2, 342);
+            this.labelWorker.Name = "labelWorker";
+            this.labelWorker.Size = new System.Drawing.Size(55, 13);
+            this.labelWorker.TabIndex = 14;
+            this.labelWorker.Text = "Работник";
+            // 
+            // textBoxWorker
+            // 
+            this.textBoxWorker.Location = new System.Drawing.Point(63, 339);
+            this.textBoxWorker.Name = "textBoxWorker";
+            this.textBoxWorker.Size = new System.Drawing.Size(33, 20);
+            this.textBoxWorker.TabIndex = 13;
+            this.textBoxWorker.Text = "2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(2, 369);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(2, 362);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(151, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "(Введите UserCode из Hours)";
+            // 
             // FormAdminDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 373);
+            this.ClientSize = new System.Drawing.Size(492, 472);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelWorker);
+            this.Controls.Add(this.textBoxWorker);
+            this.Controls.Add(this.labelMonth);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxHoursWorked);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttonHoursWorked);
+            this.Controls.Add(this.textBoxMonth);
             this.Controls.Add(this.buttonDisconnectDB);
             this.Controls.Add(this.tabControlAdminDB);
             this.Name = "FormAdminDB";
@@ -330,14 +385,19 @@
         private System.Windows.Forms.DataGridView dataGridViewHours;
         private System.Windows.Forms.DataGridView dataGridViewWages;
         private System.Windows.Forms.Button buttonDisconnectDB;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxMonth;
+        private System.Windows.Forms.Button buttonHoursWorked;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TabPage tabPageRecords;
         private System.Windows.Forms.DataGridView dataGridViewRecords;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxHoursWorked;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelMonth;
+        private System.Windows.Forms.Label labelWorker;
+        private System.Windows.Forms.TextBox textBoxWorker;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

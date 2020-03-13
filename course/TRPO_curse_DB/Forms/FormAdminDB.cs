@@ -95,5 +95,28 @@ namespace TRPO_curse_DB
             fCdb.ShowDialog();
             this.Close();
         }
+
+        private void buttonHoursWorked_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(textBoxMonth.Text) >= 1 && Convert.ToInt32(textBoxMonth.Text) <= 12)
+            {
+                connectDB = new OleDbConnection(connDB);
+                connectDB.Open();
+                int userCode = Convert.ToInt32(textBoxWorker.Text), month = Convert.ToInt32(textBoxMonth.Text);
+                queryDB = String.Format("select SNP from Hours where UserCode = {0}", userCode);
+                commandDB = new OleDbCommand(queryDB, connectDB);
+                string snp = (string)commandDB.ExecuteScalar();
+                queryDB = String.Format("select sum(HoursWorked) from Records where SNP like '{0}' and " +
+                "Date = month({1}) and ConfirmationField = true", snp, month);
+                //Date #*/{1}/*#
+                //queryDB = String.Format("select sum(HoursWorked) from Records where SNP like '{0}' and "+
+                //"ConfirmationField = true", snp);
+                readerDB = commandDB.ExecuteReader(CommandBehavior.CloseConnection);
+                int hoursWorked = Convert.ToInt32(readerDB.Read());
+                textBoxHoursWorked.Text = Convert.ToString(hoursWorked);
+                connectDB.Close();
+                connectDB.Dispose();//Для очистки управляемого мусора
+            }
+        }
     }
 }
