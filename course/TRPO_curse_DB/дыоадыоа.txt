@@ -1,0 +1,6 @@
+SELECT Sum(HoursWorked) AS Expr1
+FROM Records
+WHERE SNP Like 'Балтабев Бронислав Самуилович' AND month(Date)=3  AND ConfirmationField])=True;
+
+SELECT HoursWorked AS Expr1,month(Date)
+FROM Records;
